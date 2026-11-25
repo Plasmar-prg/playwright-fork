@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { CatalogPage } from '../pages/CatalogPage.js';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
 });
 
 const productCard = (page, name) =>
